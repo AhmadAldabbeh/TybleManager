@@ -1,0 +1,11 @@
+D:\ن\TableManager\bin\Debug\TableManager.exe.config
+D:\ن\TableManager\bin\Debug\TableManager.exe
+D:\ن\TableManager\bin\Debug\TableManager.pdb
+D:\ن\TableManager\obj\Debug\TableManager.csproj.AssemblyReference.cache
+D:\ن\TableManager\obj\Debug\TableManager.Form1.resources
+D:\ن\TableManager\obj\Debug\TableManager.Properties.Resources.resources
+D:\ن\TableManager\obj\Debug\TableManager.csproj.GenerateResource.cache
+D:\ن\TableManager\obj\Debug\TableManager.csproj.CoreCompileInputs.cache
+D:\ن\TableManager\obj\Debug\TableManager.exe
+D:\ن\TableManager\obj\Debug\TableManager.pdb
+D:\ن\TableManager\obj\Debug\TableManager.exe.config
