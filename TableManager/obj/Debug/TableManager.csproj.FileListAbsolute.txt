@@ -9,3 +9,11 @@ D:\ن\TableManager\obj\Debug\TableManager.csproj.CoreCompileInputs.cache
 D:\ن\TableManager\obj\Debug\TableManager.exe
 D:\ن\TableManager\obj\Debug\TableManager.pdb
 D:\ن\TableManager\obj\Debug\TableManager.exe.config
+D:\ن\TableManager\bin\Debug\BussinusLayer.dll
+D:\ن\TableManager\bin\Debug\DataAccesLayer.dll
+D:\ن\TableManager\bin\Debug\BussinusLayer.pdb
+D:\ن\TableManager\bin\Debug\DataAccesLayer.pdb
+D:\ن\TableManager\obj\Debug\TableMan.B60218B6.Up2Date
+D:\ن\TableManager\obj\Debug\TableManager.frmAddCulomns.resources
+D:\ن\TableManager\obj\Debug\TableManager.frmUpdateDeleteCulomns.resources
+D:\ن\TableManager\obj\Debug\TableManager.Prompt.resources

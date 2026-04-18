@@ -3,14 +3,34 @@
   "WorkspaceRootPath": "D:\\\u0646\\TableManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7A2F292-F135-4DA5-AD16-A11B44B92B44}|..\\DataAccesLayer\\DataAccesLayer.csproj|d:\\\u0646\\dataacceslayer\\clsemployeedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|d:\\\u0646\\tablemanager\\frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7A2F292-F135-4DA5-AD16-A11B44B92B44}|..\\DataAccesLayer\\DataAccesLayer.csproj|d:\\\u0646\\dataacceslayer\\clstablerowsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|d:\\\u0646\\tablemanager\\frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|d:\\\u0646\\tablemanager\\frmaddculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmaddculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|D:\\\u0646\\TableManager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|D:\\\u0646\\TableManager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7A2F292-F135-4DA5-AD16-A11B44B92B44}|..\\DataAccesLayer\\DataAccesLayer.csproj|d:\\\u0646\\dataacceslayer\\clstablemanagerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2BB5C7A-0264-4DC5-8EF5-21612DD2FE8E}|..\\BussinusLayer\\BussinusLayer.csproj|d:\\\u0646\\bussinuslayer\\clstablebussinus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|d:\\\u0646\\tablemanager\\frmaddculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmaddculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,32 +53,95 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "clsEmployeeData.cs",
-              "DocumentMoniker": "D:\\\u0646\\DataAccesLayer\\clsEmployeeData.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesLayer\\clsEmployeeData.cs",
-              "ToolTip": "D:\\\u0646\\DataAccesLayer\\clsEmployeeData.cs",
-              "RelativeToolTip": "..\\DataAccesLayer\\clsEmployeeData.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAJYAAAA0AAAAAAAAAA==",
+              "Title": "frmUpdateDeleteCulomns.cs",
+              "DocumentMoniker": "D:\\\u0646\\TableManager\\frmUpdateDeleteCulomns.cs",
+              "RelativeDocumentMoniker": "frmUpdateDeleteCulomns.cs",
+              "ToolTip": "D:\\\u0646\\TableManager\\frmUpdateDeleteCulomns.cs*",
+              "RelativeToolTip": "frmUpdateDeleteCulomns.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAArwCQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T15:13:38.065Z",
+              "WhenOpened": "2026-04-18T12:30:32.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "clsTableRowsData.cs",
-              "DocumentMoniker": "D:\\\u0646\\DataAccesLayer\\clsTableRowsData.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesLayer\\clsTableRowsData.cs",
-              "ToolTip": "D:\\\u0646\\DataAccesLayer\\clsTableRowsData.cs",
-              "RelativeToolTip": "..\\DataAccesLayer\\clsTableRowsData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAAJAAAAAAAAAA==",
+              "Title": "frmUpdateDeleteCulomns.cs [Design]",
+              "DocumentMoniker": "D:\\\u0646\\TableManager\\frmUpdateDeleteCulomns.cs",
+              "RelativeDocumentMoniker": "frmUpdateDeleteCulomns.cs",
+              "ToolTip": "D:\\\u0646\\TableManager\\frmUpdateDeleteCulomns.cs [Design]*",
+              "RelativeToolTip": "frmUpdateDeleteCulomns.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T01:40:58.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T10:54:46.802Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "frmAddCulomns.cs",
+              "DocumentMoniker": "D:\\\u0646\\TableManager\\frmAddCulomns.cs",
+              "RelativeDocumentMoniker": "frmAddCulomns.cs",
+              "ToolTip": "D:\\\u0646\\TableManager\\frmAddCulomns.cs",
+              "RelativeToolTip": "frmAddCulomns.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwDgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T08:59:48.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmAddCulomns.cs [Design]",
+              "DocumentMoniker": "D:\\\u0646\\TableManager\\frmAddCulomns.cs",
+              "RelativeDocumentMoniker": "frmAddCulomns.cs",
+              "ToolTip": "D:\\\u0646\\TableManager\\frmAddCulomns.cs [Design]",
+              "RelativeToolTip": "frmAddCulomns.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T08:44:59.57Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsTableBussinus.cs",
+              "DocumentMoniker": "D:\\\u0646\\BussinusLayer\\clsTableBussinus.cs",
+              "RelativeDocumentMoniker": "..\\BussinusLayer\\clsTableBussinus.cs",
+              "ToolTip": "D:\\\u0646\\BussinusLayer\\clsTableBussinus.cs",
+              "RelativeToolTip": "..\\BussinusLayer\\clsTableBussinus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T21:08:34.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsTableManagerData.cs",
+              "DocumentMoniker": "D:\\\u0646\\DataAccesLayer\\clsTableManagerData.cs",
+              "RelativeDocumentMoniker": "..\\DataAccesLayer\\clsTableManagerData.cs",
+              "ToolTip": "D:\\\u0646\\DataAccesLayer\\clsTableManagerData.cs",
+              "RelativeToolTip": "..\\DataAccesLayer\\clsTableManagerData.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T21:06:47.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\\u0646\\TableManager\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\\u0646\\TableManager\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAApwDAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T20:44:15.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\\u0646\\TableManager\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
