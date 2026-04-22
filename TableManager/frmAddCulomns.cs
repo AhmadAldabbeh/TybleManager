@@ -71,7 +71,7 @@ namespace TableManager
                 }
                 else
                 {
-                    MessageBox.Show("Data is not Successfully.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Data is not Saved Successfully.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
             
 

@@ -14,7 +14,7 @@ namespace TableManager
     public partial class Form1 : Form
     {
         DataTable dt = new DataTable();
-
+        private int lastSelectedRow = -1;
 
         public Form1()
         {
@@ -48,6 +48,42 @@ namespace TableManager
             frmUpdateDeleteCulomns frm = new frmUpdateDeleteCulomns();
             frm.ShowDialog();
             Form1_Load(null, null);
+        }
+
+        private void addRowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int RowID = -1;
+
+            if (DGWForm1.SelectedRows.Count != 0)
+            {
+                 RowID = Convert.ToInt32(DGWForm1.SelectedRows[0].Cells[0].Value); ;
+               
+            }
+
+
+            frmAdd_UpdateRows frm = new frmAdd_UpdateRows(clsGlobal.TableID,RowID);
+            frm.ShowDialog();
+            Form1_Load(null, null);
+
+        }
+
+        private void DGWForm1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            // إذا ضغطت على نفس الصف → شيل التحديد
+            if (lastSelectedRow == e.RowIndex)
+            {
+                DGWForm1.ClearSelection();
+                DGWForm1.CurrentCell = null; // مهم جداً
+                lastSelectedRow = -1;
+                return;
+            }
+
+            // تحديد الصف الجديد
+            DGWForm1.ClearSelection();
+            DGWForm1.Rows[e.RowIndex].Selected = true;
+            lastSelectedRow = e.RowIndex;
         }
     }
 }

@@ -42,11 +42,13 @@
             // 
             // DGWForm1
             // 
+            this.DGWForm1.BackgroundColor = System.Drawing.Color.White;
             this.DGWForm1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGWForm1.Location = new System.Drawing.Point(0, 55);
+            this.DGWForm1.Location = new System.Drawing.Point(3, 52);
             this.DGWForm1.Name = "DGWForm1";
-            this.DGWForm1.Size = new System.Drawing.Size(1041, 591);
+            this.DGWForm1.Size = new System.Drawing.Size(1041, 583);
             this.DGWForm1.TabIndex = 0;
+            this.DGWForm1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGWForm1_CellClick);
             // 
             // menuStrip1
             // 
@@ -83,6 +85,7 @@
             this.addRowToolStripMenuItem.Name = "addRowToolStripMenuItem";
             this.addRowToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.addRowToolStripMenuItem.Text = "AddRow";
+            this.addRowToolStripMenuItem.Click += new System.EventHandler(this.addRowToolStripMenuItem_Click);
             // 
             // deleteRowToolStripMenuItem
             // 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsGlobal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,12 @@
     </Compile>
     <Compile Include="frmAddCulomns.Designer.cs">
       <DependentUpon>frmAddCulomns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdd_UpdateRows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdd_UpdateRows.Designer.cs">
+      <DependentUpon>frmAdd_UpdateRows.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Prompt.cs">
@@ -77,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddCulomns.resx">
       <DependentUpon>frmAddCulomns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdd_UpdateRows.resx">
+      <DependentUpon>frmAdd_UpdateRows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prompt.resx">
       <DependentUpon>Prompt.cs</DependentUpon>
