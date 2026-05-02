@@ -98,20 +98,20 @@ namespace BussinusLayer
             return (this.ValueID > -1);
         }
 
-        private bool _AddNewRowFullWithValue()
-        {
-           return clsFieldValuesData.AddNewRowWithValue(this.TableID, this.TableFieldID, this.Value);
+        //private bool _AddNewRowFullWithValue()
+        //{
+        //   return clsFieldValuesData.AddNewRowWithValue(this.TableID, this.TableFieldID, this.Value);
             
-        }
+        //}
         private bool _UpdateFieldsValue()
         {
             return clsFieldValuesData.UpdateFieldsValues(this.ValueID, this.TableID, this.TableRowID, this.TableFieldID, this.Value);
         }
 
-        private bool _UpdateRowByRowID()
-        {
-            return clsFieldValuesData.UpdateRowWithValues(this.TableRowID, this.TableFieldID, this.Value);
-        }
+        //private bool _UpdateRowByRowID()
+        //{
+        //    return clsFieldValuesData.UpdateFieldsValues(this.TableRowID, this.TableFieldID, this.Value);
+        //}
 
         public bool DeleteFieldValue(int ValueID)
         {
@@ -123,7 +123,7 @@ namespace BussinusLayer
             switch(Mode)
             {
                 case enMode.AddNew:
-                    if (_AddNewRowFullWithValue())
+                    if (_AddNewFieldValue())
                     {
                         Mode = enMode.Update;
                         return true;
@@ -134,7 +134,7 @@ namespace BussinusLayer
                     }
 
                     case enMode.Update:
-                    return _UpdateRowByRowID();
+                    return _UpdateFieldsValue();
             }
             return false;
 

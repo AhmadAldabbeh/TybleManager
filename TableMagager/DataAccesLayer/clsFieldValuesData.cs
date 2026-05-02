@@ -199,49 +199,7 @@ namespace DataAccesLayer
             return valueID;
         }
 
-        public static bool UpdateRowWithValues(int RowID, int FieldID, string Value)
-        {
-
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
-                {
-                    //string query = @"Exec UpdateValueByRowID @RowID ,@FieldID ,@NewValue ;";
-
-                    using (SqlCommand command = new SqlCommand("UpdateValueByRowID", connection))
-                    {
-                        connection.Open();
-
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@RowID", RowID);
-                        command.Parameters.AddWithValue("@FieldID", FieldID);
-
-
-                        if (Value != "")
-                        {
-                            command.Parameters.AddWithValue("@NewValue", Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@NewValue", DBNull.Value);
-                        }
-
-                        command.ExecuteNonQuery();
-                        return true;
-
-                    }
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-
-        }
+       
 
         public static int AddNewFieldValue( int TableID, int RowID, int FieldID, string Value)
         {
@@ -417,52 +375,7 @@ namespace DataAccesLayer
         }
       
 
-        public static bool AddNewRowWithValue(int TableID, int FieldID, string Value)
-        {
-            
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
-                {
-                    //string query = @"Exec AddNewRow @TableID ,@FieldID , @Value ";
-
-                    using (SqlCommand command = new SqlCommand("AddNewRow", connection))
-                    {
-                        connection.Open();
-
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@TableID", TableID);
-                        command.Parameters.AddWithValue("@FieldID", FieldID);
-
-                        if (Value != "")
-                        {
-                            command.Parameters.AddWithValue("@Value", Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@Value", DBNull.Value);
-                        }
-
-                        command.ExecuteNonQuery();
-
-                        return true;
-                    }
-
-
-
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-
-            
-        }
+       
 
 
     }

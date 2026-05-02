@@ -175,5 +175,25 @@ namespace BussinusLayer
                 return dt;
             }
         }
+        public static DataTable GetFormulasViewByTable(int tableID)
+        {
+            using (SqlConnection con = new SqlConnection(clsConnctionString.Connction))
+            {
+                string query = @"SELECT    dbo.TableFormulas.FormulaID, dbo.TableFormulas.RowName, dbo.TableFormulas.FormulaText,
+                dbo.TableFormulas.ResultValue, dbo.TableFormulas.FromDate, dbo.TableFormulas.ToDate, dbo.Employee.EmployeeName
+                 FROM    dbo.TableFormulas LEFT OUTER JOIN
+                         dbo.Employee ON dbo.TableFormulas.EmployeeID = dbo.Employee.EmployeeID
+						 where TableID = @TableID";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.SelectCommand.Parameters.AddWithValue("@TableID", tableID);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
     }
 }

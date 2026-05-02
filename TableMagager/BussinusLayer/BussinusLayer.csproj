@@ -44,6 +44,7 @@
     <Compile Include="clsEmployees.cs" />
     <Compile Include="clsFields.cs" />
     <Compile Include="clsFieldValues.cs" />
+    <Compile Include="clsFlexibleFormula.cs" />
     <Compile Include="clsFormula.cs" />
     <Compile Include="clsTableRows.cs" />
     <Compile Include="clsTables.cs" />

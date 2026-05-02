@@ -36,6 +36,7 @@
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCulomnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analyseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DGWForm1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,8 @@
             this.addRowToolStripMenuItem,
             this.deleteRowToolStripMenuItem,
             this.deleteCulomnToolStripMenuItem,
-            this.analyseToolStripMenuItem});
+            this.analyseToolStripMenuItem,
+            this.mathToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1053, 29);
@@ -109,6 +111,13 @@
             this.analyseToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
             this.analyseToolStripMenuItem.Text = "Analyse";
             // 
+            // mathToolStripMenuItem
+            // 
+            this.mathToolStripMenuItem.Name = "mathToolStripMenuItem";
+            this.mathToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
+            this.mathToolStripMenuItem.Text = "Math";
+            this.mathToolStripMenuItem.Click += new System.EventHandler(this.mathToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteCulomnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem analyseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mathToolStripMenuItem;
     }
 }
 

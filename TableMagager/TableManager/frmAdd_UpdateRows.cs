@@ -19,14 +19,18 @@ namespace TableManager
 
         private int _RowID = -1;
         private clsTableRows RowInfo;
+
+        private int? _EmployeeID = null;
+
         private string _FieldName = "";
         private int _FieldID = -1;
 
         Dictionary<string, string> fieldValues = new Dictionary<string, string>();
 
         private int _TableID = -1;
-        private int _ValueID = -1;
-        private clsFieldValues Valueinfo;
+
+
+
 
         public frmAdd_UpdateRows(int tableID)
         {
@@ -49,20 +53,21 @@ namespace TableManager
             {
                 Mode = enMode.AddNew;
             }
-               
-            
+           
+
         }
 
         private void _DefaultData()
         {
             _FillComboBoxFieldsName();
+            _FillcomboBoxEmployeeName();
             txtValue.Text = "";
             lblTitel.Text = "Add New Row";
 
             if (Mode == enMode.AddNew)
             {               
-
-                Valueinfo = new clsFieldValues();
+                RowInfo = new clsTableRows();
+               
             }
            
 
@@ -78,6 +83,16 @@ namespace TableManager
 
         }
 
+        private void _FillcomboBoxEmployeeName()
+        {
+            DataTable dt = clsEmployees.GetAllEmployeeNames();
+
+            foreach (DataRow Row in dt.Rows)
+            {
+                comEmployeeName.Items.Add(Row[0].ToString());
+            }
+
+        }
 
         private void _loadData()
         {
@@ -102,8 +117,9 @@ namespace TableManager
             
                 fieldValues[Label] = Value;
             }
+            RowInfo = clsTableRows.Find(_RowID);
+            RowInfo.RowID = _RowID;
 
-    
             string selectedlabel = comFieldName.SelectedItem.ToString();
 
             if (fieldValues.ContainsKey(selectedlabel))
@@ -114,8 +130,11 @@ namespace TableManager
             {
                 txtValue.Text = "";
             }
-            
 
+            lblFieldName.Enabled = true;
+            comFieldName.Enabled = true;
+            txtValue.Enabled = true;
+            lblValue.Enabled = true;
 
         }
 
@@ -131,42 +150,86 @@ namespace TableManager
                 MessageBox.Show("Some filds are not valide, put the mouse over the red icon(s) to see the erro", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (Mode == enMode.Update)
-            {
-
-                _ValueID = clsFieldValues.GetValueIDByRowID(_TableID, _RowID, _FieldID);
-                Valueinfo = clsFieldValues.Find(_ValueID);
-
-               
-            }
+           
 
           
-
-            string FieldName = comFieldName.SelectedItem.ToString();
-            clsFields fieldInfo = clsFields.Find(FieldName);
-
-            if (fieldInfo == null)
+            if (chAddEmployee.Checked)
             {
-                return;
-            }
-            if (fieldInfo.DataType == "DataTime")
-            {
-                Valueinfo.Value = Add_UpdateRowDatePicker.Value.ToShortDateString();
+                string FieldName = comFieldName.SelectedItem.ToString();
+                clsFields fieldInfo = clsFields.Find(FieldName);
+
+                _FieldID = fieldInfo.FieldID;
+                RowInfo._FieldID_EmployeeName = _FieldID;
+
+                string EmployeeName = comEmployeeName.SelectedItem.ToString();
+                clsEmployees Employeeinfo = clsEmployees.Find(EmployeeName);
+                _EmployeeID = Employeeinfo.EmployeeID;
             }
             else
             {
-                Valueinfo.Value = txtValue.Text.Trim();
+                _EmployeeID = null;
             }
 
-            Valueinfo.TableID = _TableID;
-            Valueinfo.TableFieldID = fieldInfo.FieldID;
-           
-
-
-
-            if (Valueinfo.Save())
+            if (Mode == enMode.Update)
             {
+
+                string FieldName = comFieldName.SelectedItem.ToString();
+                clsFields fieldInfo = clsFields.Find(FieldName);
+
+                RowInfo.FieldID = fieldInfo.FieldID;
+
+                if (fieldInfo == null)
+                {
+                    return;
+                }
+
+                if (chAddEmployee.Checked)
+                {
+                    RowInfo.EmployeeID = _EmployeeID;
+                }
+       
+
+                else if (fieldInfo.DataType == "DataTime")
+                {
+                    RowInfo.Value = Add_UpdateRowDatePicker.Value.ToShortDateString();
+
+                }
+
+                else
+                {
+
+                    RowInfo.EmployeeID = null;
+                    RowInfo.Value = txtValue.Text.Trim();
+                }
+            }
+
+            if (Mode == enMode.AddNew)
+            {
+                RowInfo.TableID = _TableID;
+ 
+                if (chAddEmployee.Checked)
+                {
+                    RowInfo.EmployeeID = _EmployeeID;
+                    RowInfo._FieldID_EmployeeName = _FieldID;
+
+                }
+                else
+                {
+                    RowInfo.EmployeeID = null;
+                    RowInfo._FieldID_EmployeeName = null;
+                }
+
+
+            }
+
+
+            if (RowInfo.Save())
+            {
+                _RowID = RowInfo.RowID;
                 Mode = enMode.Update;
+                comEmployeeName.SelectedIndex = -1;
+                RowInfo.EmployeeID = null;
+                chAddEmployee.Checked = false;
                 lblTitel.Text = "Update Row";
                 MessageBox.Show("Data is Saved Successfully.", "Saved", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                
@@ -224,6 +287,68 @@ namespace TableManager
                 txtValue.Text = "";
             }
 
+        }
+
+
+
+        private void chAddEmployee_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chAddEmployee.Checked)
+            {
+               
+                if (Mode == enMode.AddNew)
+                {
+                    lblEmployeeName.Enabled = true;
+                    comEmployeeName.Enabled = true;
+
+                    lblFieldName.Enabled = true;
+                    comFieldName.Enabled = true;
+                }
+                if (Mode == enMode.Update)
+                {
+                    lblEmployeeName.Enabled = true;
+                    comEmployeeName.Enabled = true;
+
+                    lblFieldName.Enabled = true;
+                    comFieldName.Enabled = true;
+
+                    txtValue.Enabled = false;
+                    lblValue.Enabled = false;
+
+                }
+
+
+            }
+            else
+            {
+              
+                if (Mode == enMode.AddNew)
+                {
+                    lblFieldName.Enabled = false;
+                    comFieldName.Enabled = false;
+
+                    lblEmployeeName.Enabled = false;
+                    comEmployeeName.Enabled = false;
+
+                    txtValue.Enabled = false;
+                    lblValue.Enabled = false;
+                }
+                if (Mode == enMode.Update)
+                {
+                    lblEmployeeName.Enabled = false;
+                    comEmployeeName.Enabled = false;
+
+                    lblFieldName.Enabled = true;
+                    comFieldName.Enabled = true;
+                    txtValue.Enabled = true;
+                    lblValue.Enabled = true;
+                }
+               
+
+
+
+
+            }
         }
     }
 }

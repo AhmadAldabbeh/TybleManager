@@ -49,6 +49,41 @@ namespace DataAccesLayer
             return dt;
         }
 
+        public static DataTable GetAllEmployeeNames()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
+                {
+                    string query = "select EmployeeName from Employee order by EmployeeID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reder = command.ExecuteReader())
+                        {
+                            if (reder.HasRows)
+                            {
+                                dt.Load(reder);
+                            }
+
+                        }
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex) { }
+            return dt;
+
+        }
+
+
+
         public static bool GetEmployeeByID(int ID, ref string Name,ref string PassWord)
         {
             bool IsFound = false;
@@ -57,11 +92,11 @@ namespace DataAccesLayer
             {
                 using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
                 {
-                    string query = "select * from Employee where id = @id";
+                    string query = "select * from Employee where EmployeeID = @EmployeeID";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@id",ID);
+                        command.Parameters.AddWithValue("@EmployeeID", ID);
                         connection.Open();
 
 
@@ -71,7 +106,7 @@ namespace DataAccesLayer
                             {
                                 IsFound = true;
 
-                                Name = (string)reder["Name"];
+                                Name = (string)reder["EmployeeName"];
                                 PassWord = (string)reder["PassWord"];
 
                             }
@@ -94,6 +129,59 @@ namespace DataAccesLayer
             return IsFound;
         }
 
+        public static bool GetEmployeeByName( string Name,ref int ID, ref string PassWord)
+        {
+            bool IsFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
+                {
+                    string query = "select * from Employee where EmployeeName = @EmployeeName";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeName", Name);
+                        connection.Open();
+
+
+                        using (SqlDataReader reder = command.ExecuteReader())
+                        {
+                            if (reder.Read())
+                            {
+                                IsFound = true;
+
+                                ID = (int)reder["EmployeeID"];
+                                if (reder["PassWord" ] != DBNull.Value)
+                                {
+                                    PassWord = (string)reder["PassWord"];
+                                }
+                                else
+                                {
+                                    PassWord = "";
+                                }
+
+                            }
+                            else
+                            {
+                                IsFound = false;
+                            }
+
+                        }
+
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return IsFound;
+        }
+
+
         public static int AddNewEmployee(string Name,string PassWord)
         {
             int EmployeeID = -1;
@@ -102,7 +190,7 @@ namespace DataAccesLayer
             {
                 using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
                 {
-                    string query = @"insert into Employee  (Name,PassWord) Values (@Name,@PassWord);
+                    string query = @"insert into Employee  (EmployeeName,PassWord) Values (@EmployeeName,@PassWord);
                                   Select Scope_Identity()";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -111,11 +199,11 @@ namespace DataAccesLayer
 
                         if (Name != "")
                         {
-                            command.Parameters.AddWithValue("@Name", Name);
+                            command.Parameters.AddWithValue("@EmployeeName", Name);
                         }
                         else
                         {
-                            command.Parameters.AddWithValue("@Name", DBNull.Value);
+                            command.Parameters.AddWithValue("@EmployeeName", DBNull.Value);
                         }
                         if (PassWord != "")
                         {
@@ -157,12 +245,12 @@ namespace DataAccesLayer
             {
                 using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
                 {
-                    string query = "delete Employee where id = @id";
+                    string query = "delete Employee where EmployeeID = @EmployeeID";
 
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@id", EmployeeID);
+                        command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
 
                         RowEffected = command.ExecuteNonQuery();
 
@@ -186,16 +274,16 @@ namespace DataAccesLayer
                 using (SqlConnection connection = new SqlConnection(clsConnctionString.Connction))
                 {
                     string query = @"Update Employee  set                                   
-                                      Name = @Name,
+                                      EmployeeName = @EmployeeName,
                                       PassWord = @PassWord
-                                 where id = @id";
+                                 where EmployeeID = @EmployeeID";
 
                     using (SqlCommand command = new SqlCommand(query,connection))
                     {
                         connection.Open();
 
-                        command.Parameters.AddWithValue("@id", EmployeeID);
-                        command.Parameters.AddWithValue("@Name", EmployeeName);
+                        command.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                        command.Parameters.AddWithValue("@EmployeeName", EmployeeName);
 
                         if (PassWord != "")
                         {

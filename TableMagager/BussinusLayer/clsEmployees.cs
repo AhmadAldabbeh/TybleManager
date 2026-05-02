@@ -18,7 +18,7 @@ namespace BussinusLayer
         public string EmployeeName { get; set; }
         public string PassWord { get; set; }
 
-        clsEmployees()
+        public clsEmployees()
         {
             this.EmployeeID = -1;
             this.EmployeeName = "";
@@ -26,7 +26,7 @@ namespace BussinusLayer
 
             Mode = enMode.AddNew;
         }
-        clsEmployees(int ID,string Name,string PassWord)
+      public clsEmployees(int ID,string Name,string PassWord)
         {
             this.EmployeeID = ID;
             this.EmployeeName = Name;
@@ -40,11 +40,31 @@ namespace BussinusLayer
             return clsEmployeeData.GetAllEmployees();
         }
 
-        public clsEmployees Find(int EmployeeID)
+        public static DataTable GetAllEmployeeNames()
+        {
+            return clsEmployeeData.GetAllEmployeeNames();
+        }
+
+        public static clsEmployees Find(int EmployeeID)
         {
             string EmployeeName = "", PassWord = "";
 
             if (clsEmployeeData.GetEmployeeByID(EmployeeID,ref EmployeeName,ref PassWord))
+            {
+                return new clsEmployees(EmployeeID, EmployeeName, PassWord);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+        public static clsEmployees Find(string EmployeeName)
+        {
+            int EmployeeID = -1;
+            string  PassWord = "";
+
+            if (clsEmployeeData.GetEmployeeByName(EmployeeName, ref EmployeeID, ref PassWord))
             {
                 return new clsEmployees(EmployeeID, EmployeeName, PassWord);
             }

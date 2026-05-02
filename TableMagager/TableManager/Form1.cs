@@ -130,5 +130,12 @@ namespace TableManager
 
             Form1_Load(null, null);
         }
+
+        private void mathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFormula frm = new frmFormula();
+            frm.ShowDialog();
+            Form1_Load(null, null);
+        }
     }
 }

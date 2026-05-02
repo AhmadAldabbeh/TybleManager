@@ -12,8 +12,13 @@ namespace BussinusLayer
     {
         public enum enMode { AddNew = 0,Update =1};
         public enMode Mode = enMode.AddNew;
-
+       public int FieldID {  get; set; }
+        clsFields Fieldsinfo;
         public int RowID { get; set; }
+        public int? EmployeeID { get; set; }
+        public clsEmployees Employeeinfo;
+
+        public int? _FieldID_EmployeeName { get; set; }
 
         public string Value {  get; set; }
         public int TableID { get; set; }
@@ -23,19 +28,28 @@ namespace BussinusLayer
         {
             this.RowID = -1;
             this.TableID = -1;
+            this.EmployeeID = -1;
+          
 
             Mode = enMode.AddNew;
         }
-       public clsTableRows(int RowID,int TableID)
+       public clsTableRows(int RowID,int TableID,int EmployeeID)
         {
             this.RowID = RowID;
-            this.TableID = TableID;
+            this.TableID = TableID; 
+            this.EmployeeID = EmployeeID;
+            
             this.TableInfo = clsTables.Find(this.TableID);
+            
 
             Mode = enMode.Update;
 
         }
 
+        public int? FieldID_EmployeeName(int FieldID)
+        {
+            return _FieldID_EmployeeName = FieldID;
+        }
         public static DataTable GetAllTableRows()
         {
             return clsTableRowsData.GetAllRows();
@@ -43,11 +57,11 @@ namespace BussinusLayer
 
         public static clsTableRows Find(int RowID)
         {
-            int TableID = -1;
+            int TableID = -1, EmployeeID = -1;
 
-            if (clsTableRowsData.GetRowByID(RowID,ref TableID))
+            if (clsTableRowsData.GetRowByID(RowID,ref TableID,ref EmployeeID))
             {
-                return new clsTableRows(RowID, TableID);
+                return new clsTableRows(RowID, TableID,EmployeeID);
             }
             else
             {
@@ -59,14 +73,22 @@ namespace BussinusLayer
 
         private bool _AddNewTableRow()
         {
-            this.RowID = clsTableRowsData.AddNewRow(this.TableID);
+            var result = clsTableRowsData.AddNewRow(
+            this.TableID,
+             this.EmployeeID,          // اختياري
+             this._FieldID_EmployeeName // اختياري
+                              );
+
+            this.RowID = result.RowID;
+
             return (this.RowID > -1);
+            
 
         }
 
         private bool _UpdateTableRow()
         {
-            return clsTableRowsData.UpdateTableRows(this.RowID, this.TableID);
+            return clsTableRowsData.UpdateValue(this.RowID, this.FieldID,this.Value,this.EmployeeID);
         }
 
         
