@@ -189,7 +189,7 @@ namespace TableManager
                 }
        
 
-                else if (fieldInfo.DataType == "DataTime")
+                else if (fieldInfo.DataType == "DateTime")
                 {
                     RowInfo.Value = Add_UpdateRowDatePicker.Value.ToShortDateString();
 

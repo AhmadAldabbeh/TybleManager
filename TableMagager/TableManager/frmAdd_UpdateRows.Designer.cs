@@ -133,6 +133,7 @@
             this.Add_UpdateRowDatePicker.TabIndex = 7;
             this.Add_UpdateRowDatePicker.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             this.Add_UpdateRowDatePicker.Visible = false;
+            this.Add_UpdateRowDatePicker.ValueChanged += new System.EventHandler(this.comFieldName_SelectedIndexChanged);
             // 
             // lblEmployeeName
             // 
@@ -154,7 +155,6 @@
             this.comEmployeeName.Name = "comEmployeeName";
             this.comEmployeeName.Size = new System.Drawing.Size(239, 24);
             this.comEmployeeName.TabIndex = 8;
-
             // 
             // chAddEmployee
             // 

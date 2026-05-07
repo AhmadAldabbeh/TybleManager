@@ -62,6 +62,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chWithDateInfo = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnMoreForDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGWFormula)).BeginInit();
             this.gbDAteInfo.SuspendLayout();
@@ -165,7 +166,7 @@
             "Precise Decimal",
             "Text",
             "Date & Time"});
-            this.comDataType.Location = new System.Drawing.Point(738, 26);
+            this.comDataType.Location = new System.Drawing.Point(797, 26);
             this.comDataType.Name = "comDataType";
             this.comDataType.Size = new System.Drawing.Size(181, 24);
             this.comDataType.TabIndex = 8;
@@ -174,7 +175,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(645, 27);
+            this.label5.Location = new System.Drawing.Point(704, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 18);
             this.label5.TabIndex = 9;
@@ -183,7 +184,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(873, 774);
+            this.btnClose.Location = new System.Drawing.Point(924, 785);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 33);
             this.btnClose.TabIndex = 11;
@@ -194,7 +195,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(775, 775);
+            this.btnSave.Location = new System.Drawing.Point(826, 786);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 33);
             this.btnSave.TabIndex = 12;
@@ -246,7 +247,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(607, 22);
+            this.label8.Location = new System.Drawing.Point(666, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 18);
             this.label8.TabIndex = 18;
@@ -256,7 +257,7 @@
             // 
             this.comEmployeeName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comEmployeeName.FormattingEnabled = true;
-            this.comEmployeeName.Location = new System.Drawing.Point(738, 19);
+            this.comEmployeeName.Location = new System.Drawing.Point(797, 19);
             this.comEmployeeName.Name = "comEmployeeName";
             this.comEmployeeName.Size = new System.Drawing.Size(181, 24);
             this.comEmployeeName.TabIndex = 17;
@@ -339,11 +340,12 @@
             // 
             // DGWFormula
             // 
+            this.DGWFormula.AllowUserToAddRows = false;
             this.DGWFormula.BackgroundColor = System.Drawing.Color.White;
             this.DGWFormula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGWFormula.Location = new System.Drawing.Point(39, 495);
+            this.DGWFormula.Location = new System.Drawing.Point(39, 506);
             this.DGWFormula.Name = "DGWFormula";
-            this.DGWFormula.Size = new System.Drawing.Size(924, 273);
+            this.DGWFormula.Size = new System.Drawing.Size(975, 273);
             this.DGWFormula.TabIndex = 37;
             // 
             // gbDAteInfo
@@ -402,7 +404,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(5, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(958, 66);
+            this.groupBox3.Size = new System.Drawing.Size(1009, 66);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             // 
@@ -418,7 +420,7 @@
             this.groupBox4.Controls.Add(this.comColumnName1);
             this.groupBox4.Location = new System.Drawing.Point(5, 87);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(958, 149);
+            this.groupBox4.Size = new System.Drawing.Size(1009, 149);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             // 
@@ -437,18 +439,31 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(39, 775);
+            this.btnDelete.Location = new System.Drawing.Point(39, 786);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 33);
             this.btnDelete.TabIndex = 42;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnMoreForDelete
+            // 
+            this.btnMoreForDelete.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoreForDelete.Location = new System.Drawing.Point(151, 786);
+            this.btnMoreForDelete.Name = "btnMoreForDelete";
+            this.btnMoreForDelete.Size = new System.Drawing.Size(143, 33);
+            this.btnMoreForDelete.TabIndex = 43;
+            this.btnMoreForDelete.Text = "More for Delete";
+            this.btnMoreForDelete.UseVisualStyleBackColor = true;
+            this.btnMoreForDelete.Click += new System.EventHandler(this.btnMoreForDelete_Click);
             // 
             // frmFormula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 819);
+            this.ClientSize = new System.Drawing.Size(1026, 828);
+            this.Controls.Add(this.btnMoreForDelete);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.chWithDateInfo);
             this.Controls.Add(this.groupBox4);
@@ -510,5 +525,6 @@
         private System.Windows.Forms.CheckBox chkSpecificDate;
         private System.Windows.Forms.CheckBox chkTo;
         private System.Windows.Forms.CheckBox chkFrom;
+        private System.Windows.Forms.Button btnMoreForDelete;
     }
 }

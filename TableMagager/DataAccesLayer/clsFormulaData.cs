@@ -232,6 +232,48 @@ namespace DataAccesLayer
             }
         }
 
+        public static bool DeleteFlexibleFormula(
+    int tableID,
+    int? employeeID = null,
+    int? formulaID = null,
+    string rowName = null,
+    DateTime? fromDate = null,
+    DateTime? toDate = null)
+        {
+            bool RowEffected = false;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(clsConnctionString.Connction))
+                using (SqlCommand cmd = new SqlCommand("sp_DeleteFlexibleFormula", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Required
+                    cmd.Parameters.AddWithValue("@TableID", tableID);
+
+                    // Optional parameters
+                    cmd.Parameters.AddWithValue("@EmployeeID", (object)employeeID ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FormulaID", (object)formulaID ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@RowName", (object)rowName ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FromDate", (object)fromDate ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ToDate", (object)toDate ?? DBNull.Value);
+
+                    conn.Open();
+                   cmd.ExecuteNonQuery();
+
+                     RowEffected = true; 
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                 RowEffected = false;
+            }
+
+            return RowEffected;
+        }
 
 
 

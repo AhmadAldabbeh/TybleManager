@@ -71,6 +71,12 @@
     <Compile Include="frmAdd_UpdateRows.Designer.cs">
       <DependentUpon>frmAdd_UpdateRows.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDeleteFormula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeleteFormula.Designer.cs">
+      <DependentUpon>frmDeleteFormula.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFormula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdd_UpdateRows.resx">
       <DependentUpon>frmAdd_UpdateRows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeleteFormula.resx">
+      <DependentUpon>frmDeleteFormula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormula.resx">
       <DependentUpon>frmFormula.cs</DependentUpon>

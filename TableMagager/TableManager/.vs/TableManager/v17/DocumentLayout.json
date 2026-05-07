@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|c:\\users\\ergop\\onedrive\\tablemanager\\tablemagager\\tablemanager\\frmformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,8 +11,19 @@
       "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmadd_updaterows.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmadd_updaterows.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|c:\\users\\ergop\\onedrive\\tablemanager\\tablemagager\\tablemanager\\frmdeleteformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmdeleteformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|c:\\users\\ergop\\onedrive\\tablemanager\\tablemagager\\tablemanager\\frmdeleteformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmdeleteformula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|c:\\users\\ergop\\onedrive\\tablemanager\\tablemagager\\tablemanager\\frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|solutionrelative:frmupdatedeleteculomns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7A2F292-F135-4DA5-AD16-A11B44B92B44}|..\\DataAccesLayer\\DataAccesLayer.csproj|c:\\users\\ergop\\onedrive\\tablemanager\\tablemagager\\dataacceslayer\\clsformuladata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A376A562-4F48-4CAB-8EE3-9A80F09F4948}|TableManager.csproj|C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +41,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,15 +53,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAdd_UpdateRows.cs",
-              "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmAdd_UpdateRows.cs",
-              "RelativeDocumentMoniker": "frmAdd_UpdateRows.cs",
-              "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmAdd_UpdateRows.cs",
-              "RelativeToolTip": "frmAdd_UpdateRows.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "clsFormulaData.cs",
+              "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\DataAccesLayer\\clsFormulaData.cs",
+              "RelativeDocumentMoniker": "..\\DataAccesLayer\\clsFormulaData.cs",
+              "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\DataAccesLayer\\clsFormulaData.cs",
+              "RelativeToolTip": "..\\DataAccesLayer\\clsFormulaData.cs",
+              "ViewState": "AgIAALUAAAAAAAAAAAAuwOwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T02:18:32.361Z"
+              "WhenOpened": "2026-05-06T20:20:12.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmUpdateDeleteCulomns.cs",
+              "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmUpdateDeleteCulomns.cs",
+              "RelativeDocumentMoniker": "frmUpdateDeleteCulomns.cs",
+              "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmUpdateDeleteCulomns.cs",
+              "RelativeToolTip": "frmUpdateDeleteCulomns.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAmwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T20:16:15.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmDeleteFormula.cs",
+              "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmDeleteFormula.cs",
+              "RelativeDocumentMoniker": "frmDeleteFormula.cs",
+              "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmDeleteFormula.cs",
+              "RelativeToolTip": "frmDeleteFormula.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T18:15:05.727Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,33 +98,35 @@
               "RelativeDocumentMoniker": "frmFormula.cs",
               "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmFormula.cs",
               "RelativeToolTip": "frmFormula.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAYwMsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAALYBAAAAAAAAAAAgwNUBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T22:29:13.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAnwIkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAswIgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T20:44:15.911Z"
+              "WhenOpened": "2026-04-12T20:44:15.911Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T23:39:39.037Z"
+              "WhenOpened": "2026-04-11T23:39:39.037Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
@@ -129,6 +169,18 @@
               "RelativeToolTip": "frmFormula.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-30T19:19:34.63Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmDeleteFormula.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmDeleteFormula.cs",
+              "RelativeDocumentMoniker": "frmDeleteFormula.cs",
+              "ToolTip": "C:\\Users\\ergop\\OneDrive\\TableManager\\TableMagager\\TableManager\\frmDeleteFormula.cs [Design]",
+              "RelativeToolTip": "frmDeleteFormula.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T18:47:26.653Z",
               "EditorCaption": " [Design]"
             }
           ]

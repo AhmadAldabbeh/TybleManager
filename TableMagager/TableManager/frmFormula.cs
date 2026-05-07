@@ -23,6 +23,7 @@ namespace TableManager
 
         private string _OperationType = "";
         private string _FormularText = "";
+        private string _RowName = "";
 
         private bool _monthly = false;
         private bool _aouto_monthly = false;
@@ -41,9 +42,16 @@ namespace TableManager
 
         private void frmFormula_Load(object sender, EventArgs e)
         {
+            
+
             _ResetValue();
 
             _DefaultData();
+            DGWFormula.ClearSelection();
+            _FillComboboxFields(comColumnName1);
+            _FillComboboxFields(comColumnName2);
+            _FillEmployeeName();
+            
         }
 
         private void _DefaultData()
@@ -75,9 +83,7 @@ namespace TableManager
             DGWFormula.Columns[6].HeaderText = " EmployeeName ";
             DGWFormula.Columns[6].Width = 90;
 
-            _FillComboboxFields(comColumnName1);
-            _FillComboboxFields(comColumnName2);
-            _FillEmployeeName();
+          
           
         }
 
@@ -181,6 +187,8 @@ namespace TableManager
 
         private void _ResetValue()
         {
+            
+
             txtColumnName.Text = "";
             comDataType.SelectedIndex = -1;
             comColumnName1.SelectedIndex = -1;
@@ -224,6 +232,7 @@ namespace TableManager
      int? fieldID2,
      string operationType,
      string formulaText,
+     string RowName,
      int? employeeID,
      bool monthly,
      bool autoMonthly,
@@ -251,25 +260,33 @@ namespace TableManager
 
                 // 1) AUTO MODES
                 if (autoMonthly)
-                    return clsFlexibleFormula.CalculateAutoMonthly(tableID, fieldID1, operationType, formulaText, employeeID);
+                    return clsFlexibleFormula.CalculateAutoMonthly(tableID, fieldID1, operationType, formulaText,RowName,fromDate,toDate, employeeID);
 
                 if (autoWeekly)
-                    return clsFlexibleFormula.CalculateAutoWeekly(tableID, fieldID1, operationType, formulaText, employeeID);
+                    return clsFlexibleFormula.CalculateAutoWeekly(tableID, fieldID1, operationType, formulaText, RowName,fromDate,toDate, employeeID);
 
                 if (autoYearly)
-                    return clsFlexibleFormula.CalculateAutoYearly(tableID, fieldID1, operationType, formulaText, employeeID);
+                    return clsFlexibleFormula.CalculateAutoYearly(tableID, fieldID1, operationType, formulaText, RowName,fromDate,toDate, employeeID);
 
                 // 2) Specific Date
                 if (specificDate.HasValue)
-                    return clsFlexibleFormula.CalculateSpecificDate(tableID, fieldID1, operationType, formulaText, specificDate.Value, employeeID);
+                    return clsFlexibleFormula.CalculateSpecificDate(tableID, fieldID1, operationType, formulaText, RowName,specificDate.Value, employeeID);
 
                 // 3) Monthly
+                if (monthly && fieldID2 != null)
+                {
+                    if (!fromDate.HasValue)
+                        throw new Exception("يجب تحديد FromDate عند اختيار Monthly");
+
+                    return clsFlexibleFormula.CalculateMonthly(tableID, fieldID1, fieldID2,operationType, formulaText, RowName, fromDate.Value, toDate.Value, employeeID);
+                }
+
                 if (monthly)
                 {
                     if (!fromDate.HasValue)
                         throw new Exception("يجب تحديد FromDate عند اختيار Monthly");
 
-                    return clsFlexibleFormula.CalculateMonthly(tableID, fieldID1, operationType, formulaText, fromDate.Value, employeeID);
+                    return clsFlexibleFormula.CalculateMonthly(tableID, fieldID1, operationType, formulaText, RowName, fromDate.Value,toDate.Value, employeeID);
                 }
 
                 // 4) Two Fields Operation
@@ -278,16 +295,16 @@ namespace TableManager
                     if (!fieldID2.HasValue)
                         throw new Exception("العملية تتطلب FieldID2");
 
-                    return clsFlexibleFormula.CalculateTwoFields(tableID, fieldID1, fieldID2.Value, operationType, formulaText, fromDate, toDate, employeeID);
+                    return clsFlexibleFormula.CalculateTwoFields(tableID, fieldID1, fieldID2.Value, operationType, formulaText,RowName, fromDate, toDate, employeeID);
                 }
 
                 // 5) Field + Employee
                 if (employeeID.HasValue)
-                    return clsFlexibleFormula.CalculateFieldForEmployee(tableID, fieldID1, operationType, formulaText, employeeID.Value, fromDate, toDate);
+                    return clsFlexibleFormula.CalculateFieldForEmployee(tableID, fieldID1, operationType, formulaText, RowName, employeeID.Value, fromDate, toDate);
 
                 // 6) Single Field Operation
                 if (isSingleFieldOperation)
-                    return clsFlexibleFormula.CalculateSingleField(tableID, fieldID1, operationType, formulaText, fromDate, toDate);
+                    return clsFlexibleFormula.CalculateSingleField(tableID, fieldID1, operationType, formulaText, RowName, fromDate, toDate);
 
                 throw new Exception("لم يتم التعرف على نوع العملية الحسابية");
             }
@@ -301,7 +318,7 @@ namespace TableManager
         private bool IsCalculated()
         {
             return (CalculateFromula(this._TableID, this._FieldID_1, this._FieldID_2, this._OperationType,
-               this._FormularText, this._EmployeeID, this._monthly, this._aouto_monthly, this._aouto_Weekly,
+               this._FormularText,this._RowName, this._EmployeeID, this._monthly, this._aouto_monthly, this._aouto_Weekly,
                this._aouto_yearly, this._SpecificDate, this._FromDate, this._ToDate) > -1);
 
         }
@@ -400,6 +417,7 @@ namespace TableManager
 
 
             _TableID = TableID;
+            _RowName = NewColumnName;
             _FieldID_1 = fieldID1;
             _FieldID_2 = fieldID2;
             _OperationType = OperationType;
@@ -411,6 +429,7 @@ namespace TableManager
             _SpecificDate = specificDate;
             _FromDate = fromDate;
             _ToDate = toDate;
+            _EmployeeID = EmployeeID;
 
         }
 
@@ -423,7 +442,8 @@ namespace TableManager
             {
                 MessageBox.Show("Data is Saved Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetValue();
-
+                _DefaultData();
+                
             }
             else
             {
@@ -432,6 +452,48 @@ namespace TableManager
 
         }
 
-       
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (DGWFormula.SelectedCells.Count != 0)
+            {
+                int _FormularID = Convert.ToInt32(DGWFormula.CurrentRow.Cells[0].Value);
+
+                if (_FormularID != 0)
+                {
+                    if (MessageBox.Show("Are you sure do you want to Deleted", "Delete ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        if (FlexibleFormulaDeleteService.DeleteSingleRow(clsGlobal.TableID, _FormularID))
+                        {
+                            MessageBox.Show("Data is Deleted Successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            _DefaultData();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data is not Deleted Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           
+                        }
+                    }
+                }
+                
+            }
+
+           
+
+           
+
+
+        }
+
+        private void btnMoreForDelete_Click(object sender, EventArgs e)
+        {
+            frmDeleteFormula DeleteFormular = new frmDeleteFormula();
+
+            DeleteFormular.ShowDialog();
+
+            frmFormula_Load(null, null);
+        }
     }
 }

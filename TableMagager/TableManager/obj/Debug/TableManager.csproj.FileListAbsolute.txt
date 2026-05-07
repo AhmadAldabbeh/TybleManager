@@ -61,3 +61,4 @@ C:\Users\Acer\OneDrive\TableManager\TableMagager\TableManager\obj\Debug\TableMan
 C:\Users\Acer\OneDrive\TableManager\TableMagager\TableManager\obj\Debug\TableManager.FirstMenu.resources
 C:\Users\ergop\OneDrive\TableManager\TableMagager\TableManager\obj\Debug\TableManager.FirstMenu.resources
 C:\Users\ergop\OneDrive\TableManager\TableMagager\TableManager\obj\Debug\TableManager.frmFormula.resources
+C:\Users\ergop\OneDrive\TableManager\TableMagager\TableManager\obj\Debug\TableManager.frmDeleteFormula.resources
